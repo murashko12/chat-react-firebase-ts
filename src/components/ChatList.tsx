@@ -1,11 +1,12 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { LuPlus, LuMinus } from "react-icons/lu";
+import AddUser from "./AddUser";
 
 const ChatList = () => {
 
-  const [addMode, setAddMode] = useState<boolean>(false);
-  
+  const [addMode, setAddMode] = useState<boolean>(true);
+
   return (
     <div className="flex-1 overflow-scroll">
       <div className="flex items-center p-5 gap-5">
@@ -20,9 +21,9 @@ const ChatList = () => {
           {
             addMode 
             ? 
-            <LuPlus size={44} className="bg-[rgba(17,25,40,0.5)] p-[10px] rounded-[10px]"/>
-            :
             <LuMinus size={44} className="bg-[rgba(17,25,40,0.5)] p-[10px] rounded-[10px]"/>
+            :
+            <LuPlus size={44} className="bg-[rgba(17,25,40,0.5)] p-[10px] rounded-[10px]"/>
           }
         </div>
       </div>
@@ -30,23 +31,31 @@ const ChatList = () => {
         <img className=" w-12 h-12 rounded-full object-cover" src="/avatar.png" alt="" />
         <div className="flex flex-col gap-[10px]">
           <span className="font-medium">Jane Doe</span>
-            <p className="text-[14px] font-light">Hello</p>
-        </div>
-      </div>
-      <div className="flex items-center gap-5 p-5 cursor-pointer border-b-2 border-b-slate-600 ">
-        <img className=" w-12 h-12 rounded-full object-cover" src="/avatar.png" alt="" />
-        <div className="flex flex-col gap-[10px]">
-        <span className="font-medium ">Jane Doe</span>
           <p className="text-[14px] font-light">Hello</p>
         </div>
       </div>
       <div className="flex items-center gap-5 p-5 cursor-pointer border-b-2 border-b-slate-600 ">
         <img className=" w-12 h-12 rounded-full object-cover" src="/avatar.png" alt="" />
         <div className="flex flex-col gap-[10px]">
-        <span className="font-medium">Jane Doe</span>
+          <span className="font-medium ">Jane Doe</span>
           <p className="text-[14px] font-light">Hello</p>
         </div>
       </div>
+      <div className="flex items-center gap-5 p-5 cursor-pointer border-b-2 border-b-slate-600 ">
+        <img className=" w-12 h-12 rounded-full object-cover" src="/avatar.png" alt="" />
+        <div className="flex flex-col gap-[10px]">
+          <span className="font-medium">Jane Doe</span>
+          <p className="text-[14px] font-light">Hello</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-5 p-5 cursor-pointer border-b-2 border-b-slate-600 ">
+        <img className=" w-12 h-12 rounded-full object-cover" src="/avatar.png" alt="" />
+        <div className="flex flex-col gap-[10px]">
+          <span className="font-medium">Jane Doe</span>
+          <p className="text-[14px] font-light">Hello</p>
+        </div>
+      </div>
+      { addMode && <AddUser/> }
     </div>
   )
 }
