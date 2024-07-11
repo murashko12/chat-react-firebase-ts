@@ -4,12 +4,12 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 const Detail = () => {
     return (
         <div className="flex-1">
-            <div className="py-[30px] px-5 flex flex-col items-center gap-5 border-b-gray-500 border-b-2">
+            <div className="py-[30px] px-5 flex flex-col items-center gap-3 border-b-gray-500 border-b-2">
                 <img src="/avatar.png" alt="" className="w-[100px] h-[100px] rounded-full object-cover" />
                 <h2>John Doe</h2>
                 <p>afsas afasf wer sdff s as</p>
             </div>
-            <div className="p-5 flex flex-col gap-[30px] overflow-scroll">
+            <div className="p-5 flex flex-col gap-[25px] overflow-scroll">
 
                 <div className="">
                     <div className="flex items-center justify-between">
@@ -62,6 +62,7 @@ const Detail = () => {
                 </div>
 
                 <button className="py-[10px] px-[20px] bg-[rgba(230,74,105,0.533)] rounded-md hover:bg-[rgba(220,20,60,0.796)]">Block User</button>                
+                <button className="py-[10px] px-[20px] bg-[rgba(96,120,255,0.53)] rounded-md hover:bg-[rgba(43,62,138,0.8)]">Logout</button>                
             </div>
         </div>
     )

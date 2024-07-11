@@ -6,12 +6,18 @@ import { IoCamera } from "react-icons/io5";
 import { FaMicrophone } from "react-icons/fa";
 import { IoImage } from "react-icons/io5";
 import EmojiPicker from 'emoji-picker-react'
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Chat = () => {
 
     const [openEmoji, setOpenEmoji] = useState<boolean>(false)
     const [text, setText] = useState<string>("")
+
+    const endRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        endRef.current?.scrollIntoView({behavior: "smooth"})
+    }, [])
 
     const handleEmoji = (e: { emoji: string }) => {
         setText((prev) => prev + e.emoji)
@@ -77,6 +83,7 @@ const Chat = () => {
                     </div>
                 </div>
 
+                <div ref={endRef}></div>
             </div>
 
             <div className="p-5 flex items-center justify-between border-t-2 gap-5 border-t-slate-600">
